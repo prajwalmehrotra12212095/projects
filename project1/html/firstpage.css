@@ -1,0 +1,101 @@
+body {
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  nav {
+    background-color: #fff;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .header {
+    background-color: #fff;
+    padding: 20px 0;
+  }
+  
+  .header h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  
+  .search {
+    margin-bottom: 20px;
+  }
+  
+  .search input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 200px;
+  }
+  
+  .search button {
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .content h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  
+  .gallery {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .events {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px
+  }
