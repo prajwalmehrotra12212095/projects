@@ -49,6 +49,9 @@ body{
 #current-forecast .temp {
 font-size: var(--font-xl);
 }
+#current-forecast .description{
+    text-transform: capitalize;
+}
 #current-forecast .description {
     font-size: var(--font-regular);
     font-weight: var(--font-semibold);

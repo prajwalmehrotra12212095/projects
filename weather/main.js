@@ -5,6 +5,11 @@ const getCurrentWeatherData = async () => {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
     return response.json();
 }
+const getHourlyForecast = async ({ name: city }) => {
+    const response = await fetch(`https://api.openweathermap.orgdata/2.5/forecast?q=${city.tolowerCase()}&appid=${API_KEY}`);
+    const data = await response.json();
+    console.log();
+}
 
 const formatTemperature = (temp) => `${temp?.toFixed(1)}°`;
 
@@ -21,10 +26,8 @@ const loadCurrentForecast = ({ name, main: { temp, temp_max, temp_min }, weather
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    try {
         const currentWeather = await getCurrentWeatherData();
         loadCurrentForecast(currentWeather);
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-    }
+        getHourlyForecast(currentWeather);
+
 });
