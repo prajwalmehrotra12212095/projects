@@ -31,3 +31,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         getHourlyForecast(currentWeather);
 
 });
+//
