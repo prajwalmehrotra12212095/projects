@@ -6,9 +6,12 @@ const getCurrentWeatherData = async () => {
     return response.json();
 }
 const getHourlyForecast = async ({ name: city }) => {
-    const response = await fetch(`https://api.openweathermap.orgdata/2.5/forecast?q=${city.tolowerCase()}&appid=${API_KEY}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
     const data = await response.json();
-    console.log();
+    return data.list.map(forecast=>{
+        const{main:{temp, temp_max,temp_min}, dt, dt_txt, weather: [{description,icon}]} = forecast;
+        return {temp, temp_max , temp_min, dt , dt_txt, description, icon }
+    })
 }
 
 const formatTemperature = (temp) => `${temp?.toFixed(1)}°`;
@@ -25,10 +28,20 @@ const loadCurrentForecast = ({ name, main: { temp, temp_max, temp_min }, weather
     //         <p class="min-max-temp">High Low</p>
 }
 
+const loadHourlyForecast = (hourlyForecast) => {
+    console.log(hourlyForecast);
+    let dataFor12Hours = hourlyForecast.slice(1, 13);
+    const hourlyContainer = document.querySelector(".hourly-container");
+    let innerHtml = ``;
+
+    for(let {temp,icon,dt_txt} of datafor12Hours){
+
+    }
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
         const currentWeather = await getCurrentWeatherData();
         loadCurrentForecast(currentWeather);
-        getHourlyForecast(currentWeather);
+        const getHourlyForecast = await getHourlyForecast(currentWeather);
 
 });
-//
