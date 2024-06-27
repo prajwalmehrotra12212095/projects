@@ -73,13 +73,29 @@ font-size: var(--font-xl);
     grid-auto-flow: column;
     grid-auto-columns: minmax(100px, 1fr);
     overflow-x: auto;
+    gap: var(--spacing-medium);
+}
+#hourly-forecast .hourly-container .time{
+
+
+}
+#hourly-forecast .hourly-container .icon{
+height: 100px;
+width:100px;
+object-fit: contain;
+}
+#hourly-forecast .hourly-container .hourly-temp{
+font-size: var(--font-regular);
+font-weight: var(--font-semibold);
 }
 #five-day-forecast{
     grid-area: fiveday;
 }
 #feels-like{
     grid-area: feelslike;
+    text-align: center;
 }
 #humidity{
     grid-area: humidity;
+    text-align: center;
 }
