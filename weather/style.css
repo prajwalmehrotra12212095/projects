@@ -90,6 +90,11 @@ font-weight: var(--font-semibold);
 }
 #five-day-forecast{
     grid-area: fiveday;
+    text-align: center;
+}
+#five-day-forecast .five-day-forecast-container {
+    display: grid;
+    grid-auto-flow: row;
 }
 #feels-like{
     grid-area: feelslike;
