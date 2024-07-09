@@ -91,11 +91,35 @@ font-weight: var(--font-semibold);
 #five-day-forecast{
     grid-area: fiveday;
     text-align: center;
+
 }
 #five-day-forecast .five-day-forecast-container {
     display: grid;
     grid-auto-flow: row;
+   
 }
+.five-day-forecast-container .day-wise-forecast{
+    display: grid;
+    grid-template: auto/repeat(4, 1fr);
+    gap: var(--spacing-regular);
+    place-items: center;
+}
+.five-day-forecast-container .day-wise-forecast .min-temp, 
+.five-day-forecast-container .day-wise-forecast .max-temp {
+    font-size: var(--font-regular);
+    font-weight: var(--font-semibold);
+
+}
+.five-day-forecast-container .day-wise-forecast .min-temp{
+    opacity: 50%;
+    
+}
+.five-day-forecast-container .day-wise-forecast .icon{
+    width: 75px;
+    height: 75px;
+    
+}
+
 #feels-like{
     grid-area: feelslike;
     text-align: center;

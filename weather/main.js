@@ -1,7 +1,7 @@
 const API_KEY = "0396a4365c63ee268aebb06d2653666e";
-
+const DAYS_OF_THE_WEEK = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 const getCurrentWeatherData = async () => {
-    const city = "varanasi";
+    const city = "sandila";
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
     return response.json();
 }
@@ -41,9 +41,20 @@ innerHtml += `<article>
                 <img class="icon" src = "${createIconUrl(icon)}" />
                 <p class="hourly-temp">${formatTemperature(temp)}</p>
             </article>`
-
-            hourlyContainer.innerHTML = innerHtmlString;
     }
+            hourlyContainer.innerHTML = innerHtmlString;
+}
+const calculateFayWiseForecast = (hourlyForecast)=>{
+    let dayWiseForecast = new Map();
+    for (let forecast of hourlyForecast){
+const [date] = forecast.dt_txt.split(" ");
+const dayOfTheWeek = DAYS_OF_THE_WEEK[new Date().getDay()]
+console.log(dayOfTheWeek);
+    }
+}
+const loadFiveDayForecast = (hourlyForecast)=>{
+    console.log(hourlyForecast)
+    const dayWiseForecast = calculateFayWiseForecast(hourlyForecast);
 }
 
 const loadFeelsLike = ({main: { feels_like }})=>{
