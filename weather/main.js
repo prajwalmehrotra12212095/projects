@@ -44,13 +44,23 @@ innerHtml += `<article>
     }
             hourlyContainer.innerHTML = innerHtmlString;
 }
-const calculateFayWiseForecast = (hourlyForecast)=>{
+const calculateDayWiseForecast = (hourlyForecast)=>{
     let dayWiseForecast = new Map();
     for (let forecast of hourlyForecast){
 const [date] = forecast.dt_txt.split(" ");
 const dayOfTheWeek = DAYS_OF_THE_WEEK[new Date().getDay()]
 console.log(dayOfTheWeek);
+if(dayWiseForecast.has(dayOfTheWeek)){
+let forecastForTheDay = dayWiseForecast.get(dayOfTheWeek);
+forecastForTheDay.push(forecast);
+dayWiseForecast.set(dayOfTheWeek, [forecast]);
+
+}else{
+    dayWiseForecast.set(dayOfTheWeek, [foecast]);
+}
     }
+    console.log(dayWiseForecast);
+    // for(let [key, value] )
 }
 const loadFiveDayForecast = (hourlyForecast)=>{
     console.log(hourlyForecast)
