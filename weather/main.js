@@ -1,13 +1,12 @@
 const API_KEY = "0396a4365c63ee268aebb06d2653666e";
 const DAYS_OF_THE_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-const getCurrentWeatherData = async () => {
-    const city = "Varanasi";
+const getCurrentWeatherData = async (city) => {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
     return response.json();
 }
 
-const getHourlyForecast = async ({ name: city }) => {
+const getHourlyForecast = async (city) => {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
     const data = await response.json();
     return data.list.map(forecast => {
@@ -97,11 +96,25 @@ const loadHumidity = ({ main: { humidity } }) => {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const currentWeather = await getCurrentWeatherData();
+    const city = "Varanasi"; // Default city
+    const currentWeather = await getCurrentWeatherData(city);
     loadCurrentForecast(currentWeather);
-    const hourlyForecast = await getHourlyForecast(currentWeather);
+    const hourlyForecast = await getHourlyForecast(city);
     loadHourlyForecast(hourlyForecast);
     loadFiveDayForecast(hourlyForecast);
     loadFeelsLike(currentWeather);
     loadHumidity(currentWeather);
+
+    document.querySelector("#search-button").addEventListener("click", async () => {
+        const cityInput = document.querySelector("#city-input").value;
+        if (cityInput) {
+            const currentWeather = await getCurrentWeatherData(cityInput);
+            loadCurrentForecast(currentWeather);
+            const hourlyForecast = await getHourlyForecast(cityInput);
+            loadHourlyForecast(hourlyForecast);
+            loadFiveDayForecast(hourlyForecast);
+            loadFeelsLike(currentWeather);
+            loadHumidity(currentWeather);
+        }
+    });
 });

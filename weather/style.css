@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
@@ -12,7 +14,8 @@
     --font-semibold: 600;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0;
 }
 
@@ -31,6 +34,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
+        "search search"
         "current current" 
         "hourly hourly"
         "fiveday fiveday"
@@ -38,10 +42,34 @@ body {
     gap: var(--spacing-regular);
 }
 
-.container, .container > article {
+.container,
+.container > article {
     border: 1px solid;
     border-radius: var(--spacing-regular);
     padding: var(--spacing-regular);
+}
+
+#search {
+    grid-area: search;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-regular);
+    margin-bottom: var(--spacing-regular);
+}
+
+#search input {
+    padding: var(--spacing-medium);
+    font-size: var(--font-regular);
+    border-radius: var(--spacing-medium);
+    border: 1px solid #ccc;
+}
+
+#search button {
+    padding: var(--spacing-medium);
+    font-size: var(--font-regular);
+    border-radius: var(--spacing-medium);
+    border: 1px solid #ccc;
+    cursor: pointer;
 }
 
 #current-forecast {
@@ -106,7 +134,7 @@ body {
     place-items: center;
 }
 
-.five-day-forecast-container .day-wise-forecast .min-temp, 
+.five-day-forecast-container .day-wise-forecast .min-temp,
 .five-day-forecast-container .day-wise-forecast .max-temp {
     font-size: var(--font-regular);
     font-weight: var(--font-semibold);

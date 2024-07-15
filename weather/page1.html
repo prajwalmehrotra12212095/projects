@@ -10,6 +10,10 @@
 
 <body>
     <main class="container">
+        <section id="search">
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="search-button">Search</button>
+        </section>
         <article id="current-forecast">
             <h1 class="city">City name</h1>
             <p class="temp">Temp</p>
@@ -19,22 +23,13 @@
         <article id="hourly-forecast">
             <h1>Hourly Forecast</h1>
             <section class="hourly-container">
-                <article>
-                    <h2 class="time">Now</h2>
-                    <img class="icon" src="" alt="icon" />
-                    <p class="hourly-temp">temp</p>
-                </article>
+                <!-- Hourly forecast content -->
             </section>
         </article>
         <article id="five-day-forecast">
             <h1>5-Day Forecast</h1>
             <section class="five-day-forecast-container">
-                <article class="day-wise-forecast">
-                    <h3>today</h3>
-                    <img class="icon" src="" alt="icon">
-                    <p class="min-temp">low</p>
-                    <p class="max-temp">high</p>
-                </article>
+                <!-- 5-Day forecast content -->
             </section>
         </article>
         <article id="feels-like">
