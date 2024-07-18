@@ -96,7 +96,7 @@ const loadHumidity = ({ main: { humidity } }) => {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const city = "Varanasi"; // Default city
+    const city = "varanasi";
     const currentWeather = await getCurrentWeatherData(city);
     loadCurrentForecast(currentWeather);
     const hourlyForecast = await getHourlyForecast(city);
