@@ -22,8 +22,8 @@ nav{
     align-items: center;
 }
 .logo img{
-    width: 150px;
-    padding: 0 25px;
+    width: 145px;
+    padding: 0 29px;
 }
 nav ul{
     height: 58px;
@@ -32,11 +32,29 @@ nav ul{
 }
 nav ul li{
     list-style: none;
-    padding: 0 23px;
+    padding: 0 25px;
+    margin: auto;
 }
 nav ul li a{
+    color: rgb(175, 196, 242);
+    font-style: bold;
+}
+nav ul li a:hover{
     color: white;
     text-decoration: none;
+}
+.search{
+    display: flex;
+    align-items: center;
+}
+.search input{
+    width: 493px;
+    height: 23px;
+    border-radius: 2px;
+    margin: 0 16px 0 56px;
+}
+.container{
+    min-height: calc(100vh - 58px - 12vh);
 }
 footer{
     height: 12vh;
