@@ -6,17 +6,16 @@
 <body>
   <div class="container">
     <div class="logo">
-      <img src= "/praj.jpg"alt="LPU Logo">
+      <img src="/praj.jpg" alt="LPU Logo">
       <p>LOVELY PROFESSIONAL UNIVERSITY</p>
     </div>
 
     <h1>Login</h1>
 
-    <form action="/html/firstpage.html" method="post">
-      <input type="email" placeholder="Enter LPU Email" id="lpuEmail">
-      <input type="password" placeholder="Enter Password" id="password">
-      <button><a href="/html/firstpage.html"></a>login</button>
-      <!-- <button>Login</button> -->
+    <form id="login-form" action="firstpage.html" method="post">
+      <input type="email" placeholder="Enter LPU Email" id="lpuEmail" name="lpuEmail" required>
+      <input type="password" placeholder="Enter Password" id="password" name="password" required>
+      <button id="login-btn" type="submit">Login</button>
     </form>
   </div>
 </body>

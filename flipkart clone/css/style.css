@@ -1,65 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+#sidebar {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    background: #f0f0f0;
+    margin-right: 20px;
+    border-radius: 5px;
+}
 
-:root{
-    --main-bg-color: #2874f0;
+#club-info {
+    float: left;
+    width: 70%;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+}
 
-}
-*{
-    padding: 0;
-    margin: 0;
-}
-header{
-    
-    background: var(--main-bg-color);
-    font-family: 'Lato' , sans-serif;
-}
-nav{
-    display: flex;
-
-}
-.logo{
-    display: flex;
-    align-items: center;
-}
-.logo img{
-    width: 145px;
-    padding: 0 29px;
-}
-nav ul{
-    height: 58px;
-    display: flex;
-    justify-content: flex-start;
-}
-nav ul li{
-    list-style: none;
-    padding: 0 25px;
-    margin: auto;
-}
-nav ul li a{
-    color: rgb(175, 196, 242);
-    font-style: bold;
-}
-nav ul li a:hover{
-    color: white;
-    text-decoration: none;
-}
-.search{
-    display: flex;
-    align-items: center;
-}
-.search input{
-    width: 493px;
-    height: 23px;
-    border-radius: 2px;
-    margin: 0 16px 0 56px;
-}
-.container{
-    min-height: calc(100vh - 58px - 12vh);
-}
-footer{
-    height: 12vh;
-    background-color: var(--main-bg-color);
-    color: white;
-    font-family: 'Lato' , sans-serif;
-
+.club {
+    margin: 20px 0;
 }
