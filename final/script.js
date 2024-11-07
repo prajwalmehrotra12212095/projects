@@ -117,3 +117,6 @@ if (window.location.pathname.endsWith('club-details.html')) {
         clubsDiv.appendChild(clubDiv);
     });
 }
+
+
+//
