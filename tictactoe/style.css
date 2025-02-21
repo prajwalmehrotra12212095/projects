@@ -30,6 +30,7 @@ align-items: center;
     box-shadow: 0 0 1rem rgba(0,0,0,0.1);
     font-size: 8vmin;
     color: red;
+    background-color: #ffffc7;
 }
 #reset{
     padding: 1rem;
@@ -38,4 +39,26 @@ align-items: center;
     color: white;
     border-radius: 1rem;
     border: none;
+}
+
+#new-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+}
+#msg{
+    color: #ffffc7;
+    font-size: 8vmin;
+
+}
+
+.msg-conatiner{
+    height: 20vmin;
+}
+
+.hide{
+    display: none;
 }
